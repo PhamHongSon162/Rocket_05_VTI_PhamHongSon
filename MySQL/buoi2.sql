@@ -8,7 +8,7 @@ CREATE TABLE Department
  CREATE TABLE Position  
  (
  PositionID   INT           PRIMARY KEY AUTO_INCREMENT ,
- PositionName NVARCHAR(50)                             NOT NULL
+ PositionName NVARCHAR(50)  NOT NULL
  );
  CREATE TABLE  Accountt 
  (
@@ -18,7 +18,7 @@ CREATE TABLE Department
  Fullname     NVARCHAR(50) NOT NULL,
  DepartmentID INT   ,
  PositionID   INT   ,
- CreateDate   DATE  NOT NULL,
+ CreateDate   DATETIME  NOT NULL,
  
  CONSTRAINT DepartmentIDqs FOREIGN KEY (DepartmentID) REFERENCES Department (DepartmentID) ON DELETE CASCADE,
  CONSTRAINT PositionIDqs FOREIGN KEY (PositionID) REFERENCES Position (PositionID) ON DELETE CASCADE
@@ -28,13 +28,13 @@ CREATE TABLE Department
  GroupID     INT   PRIMARY KEY AUTO_INCREMENT,
  GroupName   NVARCHAR(50)      NOT NULL,
  CreatorID   INT  ,
- CreateDate  DATE NOT NULL 
+ CreateDate  DATETIME NOT NULL 
  );
   CREATE TABLE GroupAccount 
   (
   GroupID    INT,
   AccountID  INT,
-  JoinDate   DATE  NOT NULL,
+  JoinDate   DATETIME  NOT NULL,
   
   CONSTRAINT GroupIDqs FOREIGN KEY (GroupID) REFERENCES Groupp (GroupID) ON DELETE CASCADE,
   CONSTRAINT AccountIDqs FOREIGN KEY (AccountID) REFERENCES Accountt (AccountID) ON DELETE CASCADE
@@ -56,7 +56,7 @@ CREATE TABLE Department
   CategoryID INT,
   TypeID     INT,
   CreatorID  INT,
-  CreateDate DATE NOT NULL,
+  CreateDate DATETIME NOT NULL,
 
   CONSTRAINT CategoryIDqs FOREIGN KEY(CategoryID) 	REFERENCES CategoryQuestion(CategoryID) ON DELETE CASCADE,
   CONSTRAINT TypeID FOREIGN KEY(TypeID) 		REFERENCES TypeQuestion(TypeID) ON DELETE CASCADE
@@ -72,12 +72,12 @@ CREATE TABLE Department
   CREATE TABLE  Exam  
   (
   ExamID     INT PRIMARY KEY AUTO_INCREMENT,
-  _Code      INT NOT NULL,
+  _Code      CHAR(10) NOT NULL,
   Title      NVARCHAR(50) NOT NULL,
   CategoryID INT,
-  Duration   TIME NOT NULL,
+  Duration   INT NOT NULL,
   CreatorID  INT,
-  CreateDate DATE NOT NULL
+  CreateDate DATETIME NOT NULL
   );
   
   CREATE TABLE ExamQuestion 
