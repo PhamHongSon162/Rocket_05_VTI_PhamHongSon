@@ -15,4 +15,8 @@ public abstract class Studentq3 extends Person {
 		this.id = id;
 	}
 
+	@Override
+	public String toString() {
+		return super.toString()+ ""+ id;
+	}
 }

@@ -2,7 +2,7 @@
 public class Exercise4q1 {
 	public void question1() {
 		Student student1 = new Student("Son", "Ha Nam");
-		student1.setMark(8);
+		student1.setMark(7);
 
 		Student student2 = new Student("Luc", "Nam Dinh");
 		student2.setMark(9);

@@ -20,7 +20,7 @@ public class VietnamesePhone extends Phone {
 
 	@Override
 	public void searchContact(String name) {
-		System.out.println("Search contact " + name + "...");
+		System.out.println("Search contact " + name );
 	}
 }
 

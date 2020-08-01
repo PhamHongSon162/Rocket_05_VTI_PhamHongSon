@@ -1,12 +1,11 @@
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 public class QLCB {
 	private ArrayList<CanBo> canBos;
 
 	public QLCB() {
 		canBos = new ArrayList<>();
 	}
-	
 	// a) Thêm mới cán bộ.
 		public void addCanBo() {
 			int n;
@@ -15,7 +14,7 @@ public class QLCB {
 			System.out.println("Nhập số cán bộ muốn nhập:  ");
 			n = scanner.nextInt();
 
-			byte choose;
+			int choose;
 			CanBo canBo = new CanBo();
 			for (int i = 0; i < n; i++) {
 				System.out.println("Bạn muốn nhập cán bộ nào? (1:Công nhân || 2: Kỹ sư || 3: Nhân Viên) ");
@@ -40,12 +39,12 @@ public class QLCB {
 				canBo.input();
 				canBos.add(canBo);
 
-				scanner.close();
+				
 			}
 		}
 
 		// b) Tìm kiếm theo họ tên.
-		public void TimCanBo() {
+		public void findCanBo() {
 			Scanner scanner = new Scanner(System.in);
 
 			String hoTen;
@@ -53,14 +52,14 @@ public class QLCB {
 			hoTen = scanner.nextLine();
 
 			for (CanBo canBo : canBos) {
-				if (hoTen.equals(canBo.getHoTen())) {
+				if (hoTen.equals(canBo.getHoten())) {
 					canBo.getInfor();
 				}
 			}
 		}
 
 		// c) Hiện thị thông tin về danh sách các cán bộ.
-		public void printCanBo() {
+		public void printInforCanBo() {
 			for (CanBo canBo : canBos) {
 				canBo.getInfor();
 			}
@@ -74,12 +73,8 @@ public class QLCB {
 			System.out.println("Nhập họ tên cần xóa: ");
 			hoTen = scanner.nextLine();
 
-			canBos.removeIf(cb -> hoTen.equals(cb.getHoTen()));
-		} 
-	 }
-
-	
-	
-	
+			canBos.removeIf(cb -> hoTen.equals(cb.getHoten()));
+		}
+	}
 
 

@@ -1,20 +1,18 @@
 import java.util.Scanner;
-public class Exercise5 {
+public class InheritanceProgram {
 
 	public static void main(String[] args) {
-		Inheritance inheritance = new Inheritance();
 		question1_2();
-		inheritance.question3();
 		question4();
-		
 	}
 	private static void menuQuesion1_2() {
 		System.out.println("MENU");
 		System.out.println("  1. Thêm cán bộ ");
-		System.out.println("  2. Hiện cán bộ ");
+		System.out.println("  2. Hiện cán bộ  ");
 		System.out.println("  3. Tìm cán bộ  ");
 		System.out.println("  4. Xóa cán bộ  ");
-		System.out.println("  5. Thoát       ");
+		System.out.println("  0. Thoát       ");
+		System.out.println("Nhập chức năng : ");
 	}
 
 	public static void question1_2() {
@@ -31,32 +29,34 @@ public class Exercise5 {
 				qlcb.addCanBo();
 				break;
 			case 2:
-				qlcb.printCanBo();
+				qlcb.printInforCanBo();
 				break;
 			case 3:
-				qlcb.TimCanBo();
+				qlcb.findCanBo();
 				break;
 			case 4:
 				qlcb.deleteCanBo();
 				break;
-			case 5:
+			case 0:
 				break;
 			default:
 				System.out.println("Nhập sai ! Nhập lại !");
 				break;
 			}
-		} while (choose != 5);
+		} while (choose != 0);
 
 	}
 
 	private static void menuQuestion4() {
-		System.out.println("=======MENU==========");
-		System.out.println("==  1. Thêm tài liệu ==");
-		System.out.println("==  2. Hiện tài liệu ==");
-		System.out.println("==  3. Tìm tài liệu  ==");
-		System.out.println("==  4. Xóa tài liệu  ==");
-		System.out.println("==  5. Thoát         ==");
+		System.out.println("MENU");
+		System.out.println("  1. Thêm tài liệu ");
+		System.out.println("  2. Hiện tài liệu ");
+		System.out.println("  3. Tìm tài liệu  ");
+		System.out.println("  4. Xóa tài liệu  ");
+		System.out.println("  0. Thoát         ");
+		System.out.println("Nhập chức năng : ");
 	}
+	
 	public static void question4() {
 		QLTL qltl = new QLTL();
 
@@ -79,15 +79,19 @@ public class Exercise5 {
 			case 4:
 				qltl.deleteTaiLieu();
 				break;
-			case 5:
+			case 0:
 				break;
 			default:
 				System.out.println("Nhập sai ! Nhập lại !");
 				break;
 			}
-		} while (choose != 5);
+		}while (choose != 0);
 	}
-
 }
+
+	
+
+
+
 
 

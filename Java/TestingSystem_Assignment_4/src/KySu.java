@@ -1,11 +1,20 @@
 import java.util.Scanner;
-public class KySu extends CanBo {
+public class KySu extends CanBo{
 	private String nganhDaoTao;
+	
+	public KySu(String hoten, int tuoi, Gender gioitinh, String diachi) {
+		super(hoten, tuoi, gioitinh, diachi);
+		this.nganhDaoTao = nganhDaoTao;
 
+	}
+	public KySu() {
+		// TODO Auto-generated constructor stub
+	}
+	 
 	public String getNganhDaoTao() {
 		return nganhDaoTao;
 	}
-
+	
 	@Override
 	public void input() {
 		super.input();
@@ -21,6 +30,5 @@ public class KySu extends CanBo {
 		super.getInfor();
 		System.out.println("Ngành đào tạo  : " + nganhDaoTao);
 	}
+
 }
-
-

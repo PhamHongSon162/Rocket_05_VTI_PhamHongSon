@@ -8,6 +8,9 @@ public class HighSchoolStudent extends Studentq3 {
 		this.clazz = clazz;
 		this.desiredUniversity = desiredUniversity;
 	}
-
+	@Override
+	public String toString() {
+		return super.toString() + "" + clazz + desiredUniversity ;
+	}
 
 }
