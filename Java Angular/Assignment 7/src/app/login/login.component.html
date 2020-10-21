@@ -1,0 +1,26 @@
+<p>Login!</p>
+
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmitForm()"> 
+
+    <label> UserName: <input type="text" [(ngModel)]="login.username" 
+        formControlName="username"> </label> 
+    <div *ngIf="loginForm.get('username').hasError('required')">
+        Username is required
+    </div>
+    <br>
+
+    <label> Password: <input type="password" [(ngModel)]="login.password" 
+        formControlName="password"> </label> 
+    <div *ngIf="loginForm.get('password').hasError('required')">
+        Password is required
+    </div>
+    <br>
+
+    <button type="submit">Login</button><br>
+</form>
+
+
+
+
+
