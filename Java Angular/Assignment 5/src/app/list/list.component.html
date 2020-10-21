@@ -1,0 +1,26 @@
+<h1> Item list </h1>
+
+<table>
+    <tbody>
+        <tr>
+            <td>STT</td>
+            <td>Name</td>
+            <td>Tuổi</td>
+            <td>Sửa</td>
+            <td>Xóa</td>
+            <td>Xem chi tiết</td>
+        </tr>
+        <tr *ngFor="let abc of items; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ abc.name }}</td>
+            <td>{{ abc.age }}</td>
+            <td> <button (click)="save(i)">Sửa</button> </td>
+            <td> <button (click)="delete(i)">Xóa</button> </td>
+            <td> <button [routerLink]="['/detail/' + abc.id]">Chi tiết</button> </td>
+            <!-- <td> <button (click)="detail(abc)">Chi tiết</button> </td> -->
+        </tr>
+    </tbody>
+</table>
+
+<!-- <app-detail *ngIf="itemDetail" [item] = "itemDetail"></app-detail> -->
+<app-create [item] = "item"></app-create>

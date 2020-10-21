@@ -1,0 +1,73 @@
+<p>create works!</p>
+
+<div>
+    Favorite Color: <input type="text" [formControl]="favoriteColorControl">
+    Value {{ favoriteColorControl.value }}
+</div>
+
+<div>
+    Favorite Color: <input type="text" [(ngModel)]="favoriteColor"> 
+    Value: {{ favoriteColor }}
+</div>
+
+<button (click)="updateFormValue()">Update value reactive form</button>
+<br>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmitForm()"> 
+    <label> First Name: <input type="text" id="firstName" formControlName="firstName"> </label> 
+    <br>
+    <p>validate First Name</p>
+    <pre>{{ profileForm.get("firstName")?.errors | json }}</pre>
+    <div *ngIf="profileForm.get('firstName').hasError('required')">
+        First Name is required
+    </div>
+    <br>
+
+    <label> Last Name: <input type="text" formControlName="lastName"> </label>
+
+    <p>Address</p>
+
+    <div formGroupName="address">
+        <label> street: <input type="text" formControlName="street"> </label> 
+        <br>
+        <label> city: <input type="text" formControlName="city"> </label> 
+        <br>
+    </div>
+
+    <button type="submit">Sumit form</button><br>
+    <!-- <button (click)="testBtn(); $event.stopPropagation()">Button form</button> -->
+</form>
+
+<p>Validate</p>
+
+<p>Validate Template-driven Forms</p>
+
+<form> 
+    <input
+        placeholder="Input Username"
+        required
+        minlength="6"
+        maxlength="32"
+        [pattern]="usernamePattern"
+        #username="ngModel"
+        [(ngModel)]="userInfo.userName"
+        name="username">
+    <br>
+    <div *ngIf="username.touched && !username.valid">
+        <span *ngIf="username.errors.required">
+            Username is required
+        </span>
+        <span *ngIf="username.errors.minlength || username.errors.maxlength">
+            Length from 6 to 32 characters
+        </span>
+        <span *ngIf="!(username.errors.minlength || username.errors.maxlength) && username.errors.pattern">
+            Only alphabet
+        </span>
+    </div>
+
+</form>
+
+
+
+
+
